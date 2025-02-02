@@ -1,0 +1,6 @@
+<services>
+  <service name="cpanspec" mode="manual">
+    <param name="source">FFI::Platypus::Type::PtrObject</param>
+    <param name="add-provides">perl(FFI::Platypus::Type::PtrObject)</param>
+  </service>
+</services>
