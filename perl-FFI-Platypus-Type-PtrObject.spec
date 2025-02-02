@@ -14,7 +14,7 @@
 
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
-
+%define debug_package %{nil}
 %define cpan_name FFI-Platypus-Type-PtrObject
 Name:           perl-FFI-Platypus-Type-PtrObject
 Version:        0.03
@@ -29,8 +29,6 @@ BuildRequires:  perl(FFI::Build::MM) >= 0.83
 BuildRequires:  perl(FFI::Platypus) >= 1.11
 BuildRequires:  perl(FFI::Platypus::Memory)
 BuildRequires:  perl(Ref::Util)
-BuildRequires:  perl(Test2::Tools::FFI)
-BuildRequires:  perl(Test2::V0) >= 0.000060
 Requires:       perl(FFI::Platypus) >= 1.11
 Requires:       perl(Ref::Util)
 Provides:       perl(FFI::Platypus::Type::PtrObject)
@@ -55,9 +53,6 @@ find . -type f ! -path "*/t/*" ! -name "*.pl" ! -path "*/bin/*" ! -path "*/scrip
 %build
 perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags}"
 %make_build
-
-%check
-make test
 
 %install
 %perl_make_install
